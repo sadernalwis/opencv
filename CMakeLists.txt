@@ -272,7 +272,7 @@ OCV_OPTION(WITH_GSTREAMER "Include Gstreamer support" ON
 OCV_OPTION(WITH_GTK "Include GTK support" ON
   VISIBLE_IF UNIX AND NOT APPLE AND NOT ANDROID
   VERIFY HAVE_GTK)
-OCV_OPTION(WITH_GTK_2_X "Use GTK version 2" OFF
+OCV_OPTION(WITH_GTK_2_X "Use GTK version 2" ON
   VISIBLE_IF UNIX AND NOT APPLE AND NOT ANDROID
   VERIFY HAVE_GTK AND NOT HAVE_GTK3)
 OCV_OPTION(WITH_IPP "Include Intel IPP support" (NOT MINGW AND NOT CV_DISABLE_OPTIMIZATION)
@@ -329,7 +329,7 @@ OCV_OPTION(WITH_PVAPI "Include Prosilica GigE support" OFF
 OCV_OPTION(WITH_ARAVIS "Include Aravis GigE support" OFF
   VISIBLE_IF NOT ANDROID AND NOT IOS AND NOT WINRT AND NOT WIN32
   VERIFY HAVE_ARAVIS_API)
-OCV_OPTION(WITH_QT "Build with Qt Backend support" OFF
+OCV_OPTION(WITH_QT "Build with Qt Backend support" ON
   VISIBLE_IF NOT ANDROID AND NOT IOS AND NOT WINRT
   VERIFY HAVE_QT)
 OCV_OPTION(WITH_WIN32UI "Build with Win32 UI Backend support" ON
@@ -452,7 +452,7 @@ OCV_OPTION(BUILD_opencv_js          "Build JavaScript bindings by Emscripten" OF
 OCV_OPTION(BUILD_ANDROID_PROJECTS   "Build Android projects providing .apk files" ON  IF ANDROID )
 OCV_OPTION(BUILD_ANDROID_EXAMPLES   "Build examples for Android platform"         ON  IF ANDROID )
 OCV_OPTION(BUILD_DOCS               "Create build rules for OpenCV Documentation" OFF  IF (NOT WINRT AND NOT APPLE_FRAMEWORK))
-OCV_OPTION(BUILD_EXAMPLES           "Build all examples"                          OFF )
+OCV_OPTION(BUILD_EXAMPLES           "Build all examples"                          ON )
 OCV_OPTION(BUILD_PACKAGE            "Enables 'make package_source' command"       ON  IF NOT WINRT)
 OCV_OPTION(BUILD_PERF_TESTS         "Build performance tests"                     NOT INSTALL_CREATE_DISTRIB  IF (NOT APPLE_FRAMEWORK) )
 OCV_OPTION(BUILD_TESTS              "Build accuracy & regression tests"           NOT INSTALL_CREATE_DISTRIB  IF (NOT APPLE_FRAMEWORK) )
@@ -469,7 +469,7 @@ OCV_OPTION(BUILD_OBJC               "Enable Objective-C support"                
 # ===================================================
 OCV_OPTION(INSTALL_CREATE_DISTRIB   "Change install rules to build the distribution package" OFF )
 OCV_OPTION(INSTALL_BIN_EXAMPLES     "Install prebuilt examples" WIN32 IF BUILD_EXAMPLES)
-OCV_OPTION(INSTALL_C_EXAMPLES       "Install C examples"        OFF )
+OCV_OPTION(INSTALL_C_EXAMPLES       "Install C examples"        ON )
 OCV_OPTION(INSTALL_PYTHON_EXAMPLES  "Install Python examples"   OFF )
 OCV_OPTION(INSTALL_ANDROID_EXAMPLES "Install Android examples"  OFF IF ANDROID )
 OCV_OPTION(INSTALL_TO_MANGLED_PATHS "Enables mangled install paths, that help with side by side installs." OFF IF (UNIX AND NOT ANDROID AND NOT APPLE_FRAMEWORK AND BUILD_SHARED_LIBS) )

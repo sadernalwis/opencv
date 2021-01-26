@@ -97,8 +97,13 @@ int main( int argc, const char** argv )
         return -1;
     }
     cout << hot_keys;
-    namedWindow( "Histogram", 0 );
-    namedWindow( "CamShift Demo", 0 );
+    // namedWindow( "Histogram", 0 );
+    // namedWindow( "CamShift Demo", 0 );
+    namedWindow( "Histogram", WINDOW_NORMAL );
+    namedWindow( "CamShift Demo", WINDOW_NORMAL );
+    resizeWindow( "Histogram", 1000,1000 );
+    resizeWindow( "CamShift Demo",1000,1000);
+    
     setMouseCallback( "CamShift Demo", onMouse, 0 );
     createTrackbar( "Vmin", "CamShift Demo", &vmin, 256, 0 );
     createTrackbar( "Vmax", "CamShift Demo", &vmax, 256, 0 );
